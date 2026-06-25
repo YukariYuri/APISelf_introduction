@@ -7,7 +7,7 @@ app.use(cors())
 const Port = 3000
 
 const Self_info = {
-    profile_img : "https://pbs.twimg.com/media/HKiPDB7WwAAhbHA?format=jpg&name=small",
+    profile_img : "./assets/img.jpg",
 
     name : "Tanadach Boonthum",
     nickname : "Tonnam",
