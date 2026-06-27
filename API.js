@@ -4,7 +4,7 @@ const ApiJikan = 'https://api.jikan.moe/v4'
 const Anime = ["gosick", "toradora", "shadows house"]
 
 async function getResponse(port, path) {
-    let url
+    let url;
     if (!path) {
         url = `${port}`;
     } else {
@@ -55,13 +55,13 @@ async function getInfoData() {
 
     // API Jikan + แสดงข้อมูล
     for (let key in Anime) {
-        let val = Anime[key]
+        let val = Anime[key];
 
         const response_jikan = await getResponse(ApiJikan, `anime?q=${val}`);
 
         if (response_jikan && response_jikan.data) {
             const anime = response_jikan.data[0]; // เอาตัวแรก
-            console.log(anime)
+            // console.log(anime)
 
             // ข้อมูล
             const Img = anime.images.jpg.large_image_url;
@@ -80,10 +80,10 @@ async function getInfoData() {
                         <span style="padding: 5px;">Synopsis : ${synopsis.slice(0, 100) + "..."}</span>
                     </div>
                 </div>
-            `
+            `;
                     
         } else if (response_jikan.status === "429"){
-            anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Too Many Requests)</p>`
+            anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Too Many Requests)</p>`;
         }
     }
 }
