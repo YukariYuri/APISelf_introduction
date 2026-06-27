@@ -14,7 +14,7 @@ const Self_info = {
     birthday : "20 Janauary 2009",
     age : "17 year",
     school : "PSU Witthayanusorn Suratthani",
-    hobby : ["Play game", "Read LN Manga", "Coding"],
+    hobby : ["Gaming", "Read LN/Manga", "Coding", "Building web/app/games"],
     game : ["Wuthering Wave", "Honkai Star Rail", "Arknights EndField", "Roblox", "Minecraft"]
 }
 
