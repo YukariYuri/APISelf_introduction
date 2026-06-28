@@ -85,7 +85,7 @@ async function getInfoData() {
         } else if (response_jikan.status === 429){
             anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Too Many Requests)</p>`;
         } else if (response_jikan.status === 504){
-            anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Gateway Time-out) Jikan Server Overload</p>`;
+            anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Gateway Time-out) The Jikan server may be overloaded. Please try again later.</p>`;
         }
     }
 }
