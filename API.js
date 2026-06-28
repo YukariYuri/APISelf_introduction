@@ -57,6 +57,7 @@ async function getInfoData() {
         let val = Anime[key];
 
         const response_jikan = await getResponse(ApiJikan, `anime?q=${val}`);
+        console.log(response_jikan.status)
 
         if (response_jikan && response_jikan.data) {
             const anime = response_jikan.data[0]; // เอาตัวแรก
@@ -81,8 +82,10 @@ async function getInfoData() {
                 </div>
             `;
                     
-        } else if (response_jikan.status === "429"){
+        } else if (response_jikan.status === 429){
             anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Too Many Requests)</p>`;
+        } else if (response_jikan.status === 504){
+            anime_tag.innerHTML += `<p>Error Status : ${response_jikan.status} (Gateway Time-out) Jikan Server Overload</p>`;
         }
     }
 }
