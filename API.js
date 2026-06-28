@@ -15,8 +15,7 @@ async function getResponse(port, path) {
         .then(res => res.json())
         .catch(err => {
             return {
-                error : err,
-                status : err.status
+                error : err
             };
         })
     return response
